@@ -25,3 +25,10 @@ The trade-off is speed: fractions are far slower than hardware floats, and deter
 ## Edge cases
 
 Construction rejects ragged row lengths, empty matrices, and string entries (so a typo like `"1/2"` raises rather than silently becoming 0). Determinant and inverse raise `ValueError` on non-square matrices; inverse raises `ValueError` on singular matrices. Entry indexing is 0-based and out-of-range raises `IndexError`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
