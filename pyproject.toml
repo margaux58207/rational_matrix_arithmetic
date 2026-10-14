@@ -1,6 +1,6 @@
 [project]
 name = "rational-matrix-arithmetic"
-version = "0.1.0"
+version = "0.1.1"
 description = "Matrix addition, multiplication, determinant, and inverse using exact Fraction entries to avoid floating-point error."
 requires-python = ">=3.10"
 dependencies = []
